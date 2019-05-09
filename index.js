@@ -13,5 +13,5 @@ function makeRequest (){
                 document.querySelector('#result').appendChild(image);
             });
         }
-    }); 
+    }); 123
 }

@@ -9,3 +9,17 @@ function getImages(pageNumber){
         return data.data;
     });
 }
+
+function getTasks(){
+    var promise =axios.get(`https://repetitora.net/api/JS/Tasks?widgetId=123`);
+    return promise.then((data)=>{
+        return data.data;
+    });
+}
+
+function createTasks(title){
+    var promise =axios.post(`https://repetitora.net/api/JS/Tasks?widgetId=123&title=${title}`);
+    return promise.then((data)=>{
+        return data.data;
+    });
+}

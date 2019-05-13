@@ -13,9 +13,19 @@ getTasksButton.addEventListener("click", ()=>{
     promise
     .then(onTasksReceived);
 });
-createTasks('learn react').then((data) =>{
+/*createTasks('learn NODEJS').then((data) =>{
     console.log(data);
 });
+*/
+/*
+deleteTasks('16c9ffec-82c0-4ff6-af85-389690d03e49').then((data) =>{
+    console.log(data);
+});
+*/
+updateTasks('Learn NoSql', '8fccc982-7791-454c-a80d-494159661f77').then((data)=>{
+    console.log(data);
+})
+
 
 function onImagesReceived(data) {
         data.forEach(element => {
@@ -25,10 +35,13 @@ function onImagesReceived(data) {
         });
     }
     function onTasksReceived(tasks) {
+        const result = document.querySelector('#result');
+        result.innerHTML = '';
         tasks.forEach(task => {
             const li=document.createElement('li');
             li.innerHTML=task.title;
-            document.querySelector('#result').appendChild(li);
+            li.dataset.id=task.id;
+            result.appendChild(li);
         });
     }
     

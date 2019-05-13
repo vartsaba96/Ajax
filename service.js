@@ -26,3 +26,20 @@ function createTasks(title){
         return data.data;
     });
 }
+
+function updateTasks(title,taskId){
+    var promise =axios.put(`https://repetitora.net/api/JS/Tasks`,{
+        widgetId:123,
+        title:title,
+        taskId: taskId,
+    });
+    return promise.then((data)=>{
+        return data.data;
+    });
+}
+function deleteTasks(id){
+    var promise =axios.delete(`https://repetitora.net/api/JS/Tasks?widgetId=123&taskId=${id}`);
+    return promise.then((data)=>{
+        return data.data;
+    });
+}
